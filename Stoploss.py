@@ -36,7 +36,7 @@ while True:
     try:
         positions = client.get_position()
     except ConnectionError:
-        print("Can't get positions for take profit function...")
+        print("Can't get positions for further processing...")
         continue
 
     # Get balance
