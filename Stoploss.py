@@ -9,14 +9,14 @@ client = RequestClient(api_key=g_api_key, secret_key=g_secret_key, url="https://
 
 human_response = ""
 while human_response != "y" and human_response != "n":
-    human_response: str = input("Check fix leverage mode?[y/n]")
+    human_response: str = input("Update leverage and leverage mode?[y/n]")
 
 
 ExchangeInfo = client.get_exchange_information()
 # Set starting time
 last_time = 0
 
-# Set margin to Isolated
+# Set margin to Isolated or Crossed
 if human_response == "y" or human_response == "Y":
     for Symbol in ExchangeInfo.symbols:
         pair = Symbol.baseAsset + "USDT"
